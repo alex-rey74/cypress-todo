@@ -1,6 +1,6 @@
 /// <reference types='Cypress' />
 
-describe('App init0', () => {
+describe('App init', () => {
     it('List todo from API on load', () => {
         /*
         // même chose
@@ -12,5 +12,10 @@ describe('App init0', () => {
 
         cy.seedAndVisit()
         cy.get('.todo-list li').should('have.length', 4)
+    })
+
+    it('List empty todo', () => {
+        cy.seedAndVisit('fixture:emptyTodos')
+        cy.get('.todo-list li').should('have.length', 0)
     })
 })

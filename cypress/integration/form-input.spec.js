@@ -2,7 +2,7 @@
  
 describe('Form input', () => {
     beforeEach(() => {
-        cy.visit('/')
+        cy.seedAndVisit()
     })
 
     it('Focuses the input', () => {
