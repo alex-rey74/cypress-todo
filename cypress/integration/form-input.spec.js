@@ -1,16 +1,18 @@
 /// <reference types='Cypress' />
  
 describe('Form input', () => {
-    it('Focuses the input', () => {
+    beforeEach(() => {
         cy.visit('/')
+    })
+
+    it('Focuses the input', () => {
         cy.focused()
         .should('have.class', 'new-todo')
     })
 
     it('Accept input', () => {
-        const testValue = 'New value';
+        const testValue = 'New todo';
 
-        cy.visit('/')
         cy.get('.new-todo')
             .type(testValue)
             .should('have.value', testValue)
